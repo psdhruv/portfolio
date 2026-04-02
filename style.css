@@ -81,12 +81,36 @@ nav {
   display: flex;
   align-items: center;
   padding: 0 2rem;
-  max-width: 760px;
+  max-width: 860px;
   margin: 0 auto;
 }
 
-.hero-content {
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
   padding-top: 56px;
+  width: 100%;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-photo-wrap {
+  flex-shrink: 0;
+}
+
+.hero-photo {
+  width: 200px;
+  height: 260px;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: center top;
+  border: 1px solid var(--border);
+  display: block;
 }
 
 .hero-eyebrow {
@@ -327,9 +351,11 @@ section {
 }
 
 .contact-icon {
-  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 24px;
-  text-align: center;
+  flex-shrink: 0;
 }
 
 .contact-label {
@@ -342,7 +368,43 @@ section {
   margin-left: auto;
 }
 
-/* ─── FOOTER ─────────────────────────────────────────── */
+/* ─── HOBBIES ────────────────────────────────────────── */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+}
+
+.hobby-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.25rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--bg);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.hobby-card:hover {
+  background: var(--bg-secondary);
+  border-color: #d0d0d0;
+}
+
+.hobby-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.hobby-label {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+
 footer {
   border-top: 1px solid var(--border);
   padding: 2rem;
@@ -371,6 +433,21 @@ footer {
 
   .hero {
     padding: 0 1.25rem;
+  }
+
+  .hero-inner {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .hero-photo {
+    width: 100px;
+    height: 130px;
+  }
+
+  .hobbies-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   section {
